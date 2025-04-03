@@ -11,6 +11,32 @@ Based on the example provided in the [MCP documentation](https://modelcontextpro
 
 ![preview](./assets/preview.png)
 
+## Usage
+
+The snippet below requires `git`, `nvm`, and `pnpm`.
+
+```bash
+git clone git@github.com:cephalization/mcp-ts-quickstart.git
+cd mcp-ts-quickstart
+nvm install && nvm use
+pnpm install
+```
+
+Once cloned and dependencies installed, you can add this server to Claude Desktop with a config similar to the following:
+
+```json
+{
+  "mcpServers": {
+    "hacker-news": {
+      "command": "/Users/tony/.nvm/versions/node/v23.6.0/bin/node",
+      "args": ["/Users/tony/repos/mcp/src/index.ts"]
+    }
+  }
+}
+```
+
+See the [MCP documentation](https://modelcontextprotocol.io/quickstart/user) for more information on how to use Claude Desktop as a client.
+
 ## Development
 
 The following commands will install the dependencies, and then start the MCP server with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) UI as a client.
