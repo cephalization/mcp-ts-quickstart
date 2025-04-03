@@ -43,5 +43,3 @@ export const topStories = [
     return stories;
   },
 ] satisfies ToolTuple;
-
-export const story = [];

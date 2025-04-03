@@ -7,6 +7,8 @@ and fetches the top stories from Hacker News.
 
 It is written in TypeScript and works without a build step by utilizing Node v23.
 
+Based on the example provided in the [MCP documentation](https://modelcontextprotocol.io/quickstart/server).
+
 ![preview](./assets/preview.png)
 
 ## Development

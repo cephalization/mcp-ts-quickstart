@@ -8,7 +8,8 @@
     "mcp": "./src/index.ts"
   },
   "scripts": {
-    "start": "npx -y @modelcontextprotocol/inspector -- node src/index.ts"
+    "start": "npx -y @modelcontextprotocol/inspector -- node src/index.ts",
+    "typecheck": "tsc --noEmit"
   },
   "files": [
     "src"
