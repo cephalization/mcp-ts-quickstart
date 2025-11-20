@@ -1,32 +1,50 @@
 {
-  "name": "mcp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.ts",
+  "name": "mcp-ts-quickstart",
+  "version": "2.0.0",
+  "description": "Enhanced build-less TypeScript quickstart for MCP server with auto-loading and HTTP/SSE support",
   "type": "module",
-  "bin": {
-    "mcp": "./src/index.ts"
-  },
-  "scripts": {
-    "start": "npx -y @modelcontextprotocol/inspector -- node src/index.ts",
-    "typecheck": "tsc --noEmit"
-  },
-  "files": [
-    "src"
-  ],
-  "keywords": [],
-  "author": "Anthony Powell <powell.anthonyd@proton.me>",
-  "license": "MIT",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.8.0",
-    "zod": "^3.24.2"
-  },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "typescript": "^5.8.2"
-  },
-  "engineStrict": true,
   "engines": {
     "node": ">=23.0.0"
-  }
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types src/index.ts",
+    "start:http": "MCP_TRANSPORT=http node --experimental-strip-types src/index.ts",
+    "start:inspector": "./mcp-inspect.mjs",
+    "dev": "npm run start",
+    "dev:http": "npm run start:http",
+    "test": "tsx tests/integration/transports.test.ts",
+    "test:integration": "tsx tests/integration/transports.test.ts",
+    "example:http": "tsx tests/examples/http-sse-client.ts",
+    "example:stdio": "tsx tests/examples/stdio-client.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "typescript",
+    "build-less",
+    "auto-loading",
+    "http-sse"
+  ],
+  "author": "Ramene",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "express": "^4.21.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.17.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "dotenv": "^17.2.3",
+    "tsx": "^4.20.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramene/mcp-ts-quickstart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ramene/mcp-ts-quickstart/issues"
+  },
+  "homepage": "https://github.com/ramene/mcp-ts-quickstart#readme"
 }
